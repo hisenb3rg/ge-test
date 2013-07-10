@@ -1,6 +1,9 @@
 require 'init_command'
 require 'clear_command'
 require 'dot_fill_command'
+require 'vertical_seg_command'
+require 'horizontal_seg_command'
+require 'fill_command'
 require 'show_command'
 
 class GraphicalEditor
@@ -9,6 +12,9 @@ class GraphicalEditor
     InitCommand,
     ClearCommand,
     DotFillCommand,
+    VerticalSegCommand,
+    HorizontalSegCommand,
+    FillCommand,
     ShowCommand
   ]
 
