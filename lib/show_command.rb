@@ -1,14 +1,13 @@
-class ShowCommand
+require 'base_command'
+
+class ShowCommand < BaseCommand
   
-  def initialize(matrix)
-    @matrix = matrix
-  end
+  COMMAND_REGEX = /^S/
 
   def process
     for row in @matrix
       puts row.join
     end
-
-    @matrix
   end
+
 end  

@@ -1,16 +1,12 @@
-class InitCommand
-  
-  def initialize(matrix)
-    @matrix = matrix
-  end
+require 'base_command'
+require 'colors'
+
+class InitCommand < BaseCommand
+
+  COMMAND_REGEX = /^I\s+(\d+)\s+(\d+)/
 
   def process(columns, rows)
-    matrix = []
-
-    rows.times do
-      matrix << Array.new(columns, Colors::WHITE)
-    end
-
-    @matrix = matrix
+    @matrix = Array.new(rows) { Array.new(columns, Colors::WHITE) }
   end
+
 end  

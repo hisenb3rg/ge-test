@@ -1,10 +1,16 @@
-require 'command_processor'
+require 'graphical_editor'
 
-cp = CommandProcessor.new
+ge = GraphicalEditor.new
 
 ARGF.each do |command|
-  puts command
-  result = cp.process(command)
+  begin
+    success = ge.run(command)
+    if not success
+      puts 'Bye, bye!'
+      break
+    end
 
-  break if !result
+  rescue GraphicalEditor::CommandNotRecognized
+    puts 'Command was not recognized, please try again.'
+  end
 end
