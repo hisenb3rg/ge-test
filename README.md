@@ -1,22 +1,18 @@
-[![Code Climate](https://codeclimate.com/github/jurglic/checkout-test.png)](https://codeclimate.com/github/jurglic/checkout-test)
-[![Build Status](https://travis-ci.org/jurglic/checkout-test.png)](https://travis-ci.org/jurglic/checkout-test)
+[![Code Climate](https://codeclimate.com/github/jurglic/ge-test.png)](https://codeclimate.com/github/jurglic/ge-test)
 
-Checkout system test task for an e-commerce client
+Simulation of graphical editor over CLI (test task for a client)
 ==================
 
-Cart checkout domain is modelled by domain driven design approach. A set of small and decoupled classes is introduced that follow single responsibily principle.
-
-
-Running acceptance specs is simple:
+Graphical editor is run in interactive CLI as follows:
 ~~~ sh
-$ rspec spec/checkout_acceptance_spec.rb
+$ ruby -Ilib lib/cli.rb
 ~~~
 
-If you wish to expirement in irb, make sure you add lib to load path:
+Specs can be run with rake:
 ~~~ sh
-$ irb -Ilib
-> require 'checkout'
+$ rake
 ~~~
+
 
 
 Requirements
