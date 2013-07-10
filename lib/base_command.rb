@@ -1,3 +1,11 @@
+# Public: Abstract class for implementation of graphical editor commands.
+# It should be used this way:
+# - subclassing this class
+# - implementing process method which can modify the @matrix instance variable
+# - defining COMMAND_REGEX regular expression
+# It provides base matrix variable, common constructor and run method. 
+# The latter checks command string compliance and parses the arguments.
+#
 class BaseCommand
 
   attr_reader :matrix
@@ -8,6 +16,7 @@ class BaseCommand
     @matrix = matrix
   end
 
+  # abstract method - so it raises error on call
   def process
     raise 'Process method must be implemented by the command class!'
   end

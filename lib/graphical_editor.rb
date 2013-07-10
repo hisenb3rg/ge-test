@@ -6,6 +6,8 @@ require 'horizontal_seg_command'
 require 'fill_command'
 require 'show_command'
 
+# Public: Class represents graphical editor which can run different commands.
+#
 class GraphicalEditor
 
   COMMANDS = [
@@ -30,8 +32,6 @@ class GraphicalEditor
 
     if cmd
       @matrix = cmd.new(@matrix).run(cmd_string)
-    elsif cmd_string =~ /X/
-      false
     else
       raise CommandNotRecognized
     end
